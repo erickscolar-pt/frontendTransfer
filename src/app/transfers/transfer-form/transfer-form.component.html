@@ -22,6 +22,10 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+
+        <div *ngIf="alert" class="alert">
+            <span>*Sem taxa para o dia agendado</span>
+        </div>
     
           <button mat-raised-button color="accent" (click)="onSubmit()">Enviar transferencia</button>
     </form>

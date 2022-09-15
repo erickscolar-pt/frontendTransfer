@@ -24,6 +24,6 @@ export class TransfersService {
 
   save(transfer: Transfers){
     console.log(transfer)
-    return this.httpClient.post<Transfers>(this.API, transfer).pipe(first());
+    return this.httpClient.post<any>(this.API, transfer).pipe(first());
   }
 }
