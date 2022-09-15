@@ -6,7 +6,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListTransfersComponent } from './list-transfers/list-transfers.component';
 import { TransfersRoutingModule } from './transfers-routing.module';
 import { TransferFormComponent } from './transfer-form/transfer-form.component';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule,IConfig } from 'ngx-mask';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) ={};
+
+
 
 @NgModule({
   declarations: [

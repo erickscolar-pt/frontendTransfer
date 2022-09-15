@@ -6,12 +6,12 @@
 
         <ng-container matColumnDef="contaorigem">
           <th mat-header-cell *matHeaderCellDef> Conta origem </th>
-          <td mat-cell *matCellDef="let transfer"> {{transfer.contaorigem}} </td>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.contaorigem | mask:'00000-0'}} </td>
         </ng-container>
       
         <ng-container matColumnDef="contadestino">
           <th mat-header-cell *matHeaderCellDef> Conta destino </th>
-          <td mat-cell *matCellDef="let transfer"> {{transfer.contadestino}} </td>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.contadestino | mask:'00000-0'}} </td>
         </ng-container>
       
         <ng-container matColumnDef="valor">
@@ -21,17 +21,17 @@
     
         <ng-container matColumnDef="taxa">
           <th mat-header-cell *matHeaderCellDef> Taxa </th>
-          <td mat-cell *matCellDef="let transfer"> {{transfer.taxa}} </td>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.taxa | mask: 'separator':','}} </td>
         </ng-container>
     
         <ng-container matColumnDef="dataagendamento">
           <th mat-header-cell *matHeaderCellDef> Data agendamento </th>
-          <td mat-cell *matCellDef="let transfer"> {{transfer.dataagendamento}} </td>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.dataagendamento | mask: '99-99-9999'}} </td>
         </ng-container>
     
         <ng-container matColumnDef="datatransferencia">
             <th mat-header-cell *matHeaderCellDef> Data transferencia </th>
-            <td mat-cell *matCellDef="let transfer"> {{transfer.datatransferencia}} </td>
+            <td mat-cell *matCellDef="let transfer"> {{transfer.datatransferencia | mask: '99-99-9999'}} </td>
           </ng-container>
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

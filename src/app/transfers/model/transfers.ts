@@ -5,5 +5,5 @@ export interface Transfers {
     valor: number,
     taxa: number,
     datatransferencia: String,
-    dataagendamento: String
+    dataagendamento: Date
 }

@@ -4,15 +4,15 @@
     </mat-toolbar>
     <form [formGroup]="form">
         <mat-form-field>
-            <input matInput placeholder="Conta origem" formControlName="contaorigem">
+            <input matInput placeholder="Conta origem" formControlName="contaorigem" mask="00000-0">
         </mat-form-field>
     
         <mat-form-field>
-            <input matInput placeholder="Conta destino" formControlName="contadestino">
+            <input matInput placeholder="Conta destino" formControlName="contadestino" mask="00000-0">
         </mat-form-field>
     
         <mat-form-field>
-            <input matInput placeholder="Valor da transferencia" formControlName="valor">
+            <input matInput placeholder="Valor da transferencia" formControlName="valor" mask="separator.2" thousandSeparator=".">
         </mat-form-field>
     
         <mat-form-field appearance="fill">

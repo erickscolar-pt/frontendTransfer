@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { formatDate } from '@angular/common';
+import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TransfersService } from 'src/app/services/transfers.service';
 
@@ -11,6 +12,7 @@ export class TransferFormComponent implements OnInit {
   form: UntypedFormGroup;
 
   constructor(
+    @Inject(LOCALE_ID) public locale: string,
     private formBuilder: UntypedFormBuilder,
     private service: TransfersService
     ) { 
@@ -26,7 +28,10 @@ export class TransferFormComponent implements OnInit {
   }
 
   onSubmit(){
-    //console.log(this.form.value)
+    let data = this.form.value.dataagendamento
+    let dataRegistro = formatDate(data,'dd/MM/yyyy',this.locale)
+    this.form.value.dataagendamento = dataRegistro;
+    //console.log()
     this.service.save(this.form.value).subscribe(result => console.log(result));
   }
 

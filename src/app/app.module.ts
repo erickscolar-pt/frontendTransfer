@@ -7,7 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatButtonModule } from '@angular/material/button';
-import { NgxMaskModule } from 'ngx-mask'
+import { NgxMaskModule,IConfig  } from 'ngx-mask'
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+
+export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
+
 
 @NgModule({
   declarations: [
@@ -21,9 +25,11 @@ import { NgxMaskModule } from 'ngx-mask'
     HttpClientModule,
     ReactiveFormsModule,
     MatButtonModule,
-    NgxMaskModule
+    NgxMaskModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
