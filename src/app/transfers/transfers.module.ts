@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListTransfersComponent } from './list-transfers/list-transfers.component';
 import { TransfersRoutingModule } from './transfers-routing.module';
 import { TransferFormComponent } from './transfer-form/transfer-form.component';
-
+import { NgxMaskModule } from 'ngx-mask'
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { TransferFormComponent } from './transfer-form/transfer-form.component';
     TransfersRoutingModule,
     AppMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forChild()
   ]
 })
 export class TransfersModule { }
