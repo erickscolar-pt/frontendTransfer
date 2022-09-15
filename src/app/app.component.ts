@@ -15,4 +15,7 @@ export class AppComponent {
   public onAdd(){
     this.router.navigate([''])
   }
+  public onAddB(){
+    this.router.navigate(['transferslist/new'])
+  }
 }

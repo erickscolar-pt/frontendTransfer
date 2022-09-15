@@ -5,7 +5,7 @@ import { TransferFormComponent } from './transfer-form/transfer-form.component';
 
 const routes: Routes = [
   {path: '', component: ListTransfersComponent},
-  {path: 'new', component: TransferFormComponent}
+  { path: 'new', component: TransferFormComponent },
 ];
 
 @NgModule({
