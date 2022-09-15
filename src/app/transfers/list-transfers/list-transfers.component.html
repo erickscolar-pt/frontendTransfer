@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-toolbar color="">
+        Lista de Transferencias
+    </mat-toolbar>
+    <table mat-table [dataSource]="transferslist" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="contaorigem">
+          <th mat-header-cell *matHeaderCellDef> Conta origem </th>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.contaorigem}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="contadestino">
+          <th mat-header-cell *matHeaderCellDef> Conta destino </th>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.contadestino}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="valor">
+          <th mat-header-cell *matHeaderCellDef> Valor </th>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.valor}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="taxa">
+          <th mat-header-cell *matHeaderCellDef> Taxa </th>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.taxa}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="dataagendamento">
+          <th mat-header-cell *matHeaderCellDef> Data agendamento </th>
+          <td mat-cell *matCellDef="let transfer"> {{transfer.dataagendamento}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="datatransferencia">
+            <th mat-header-cell *matHeaderCellDef> Data transferencia </th>
+            <td mat-cell *matCellDef="let transfer"> {{transfer.datatransferencia}} </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</mat-card>
