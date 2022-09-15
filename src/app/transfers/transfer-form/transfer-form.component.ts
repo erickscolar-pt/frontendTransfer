@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { TransfersService } from 'src/app/services/transfers.service';
 
 @Component({
@@ -8,10 +8,10 @@ import { TransfersService } from 'src/app/services/transfers.service';
   styleUrls: ['./transfer-form.component.scss']
 })
 export class TransferFormComponent implements OnInit {
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private service: TransfersService
     ) { 
     this.form = this.formBuilder.group({
