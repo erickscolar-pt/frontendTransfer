@@ -1,1 +1,28 @@
-<p>transfer-form works!</p>
+<div class="container">
+    <mat-toolbar>
+        Transferencias
+    </mat-toolbar>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <input matInput placeholder="Conta origem" formControlName="contaorigem">
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput placeholder="Conta destino" formControlName="contadestino">
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput placeholder="Valor da transferencia" formControlName="valor">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dataagendamento"
+            >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    
+          <button mat-raised-button color="accent" (click)="onSubmit()">Enviar transferencia</button>
+    </form>
+</div>

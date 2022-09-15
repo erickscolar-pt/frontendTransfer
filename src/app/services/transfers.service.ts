@@ -10,7 +10,7 @@ import { first, tap } from 'rxjs';
 export class TransfersService {
 
 
-  private readonly API = '/assets/transfers.json'
+  private readonly API = 'api/transfer'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,5 +20,10 @@ export class TransfersService {
       first(),
       tap(list => console.log(list))
     )
+  }
+
+  save(transfer: Transfers){
+    console.log(transfer)
+    return this.httpClient.post<Transfers>(this.API, transfer).pipe(first());
   }
 }
